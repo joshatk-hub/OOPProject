@@ -1,10 +1,223 @@
 {
-  "exclude": [
-    "**/bin",
-    "**/bower_components",
-    "**/jspm_packages",
-    "**/node_modules",
-    "**/obj",
-    "**/platforms"
+  "MenuItems": [
+    {
+      "ID": "001",
+      "Name": "Sourdough bread",
+      "Category": "Breads",
+      "Price": 6.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "002",
+      "Name": "Chocolate chip cookies",
+      "Category": "Cookies",
+      "Price": 1.50,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "003",
+      "Name": "Blueberry muffin",
+      "Category": "Muffins",
+      "Price": 3.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "004",
+      "Name": "Cinnamon roll",
+      "Category": "Pastries",
+      "Price": 3.50,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "005",
+      "Name": "Apple pie",
+      "Category": "Pies",
+      "Price": 15.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "006",
+      "Name": "Custom decorated cake",
+      "Category": "Cakes",
+      "Price": 45.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "007",
+      "Name": "Honey butter jar",
+      "Category": "Extras",
+      "Price": 6.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "008",
+      "Name": "Italian Loaf",
+      "Category": "Breads",
+      "Price": 4.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "009",
+      "Name": "Baguette",
+      "Category": "Breads",
+      "Price": 4.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "010",
+      "Name": "Oatmeal raisin cookie",
+      "Category": "Cookies",
+      "Price": 2.25,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "011",
+      "Name": "Bran muffin",
+      "Category": "Muffins",
+      "Price": 3.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "012",
+      "Name": "Croissant",
+      "Category": "Pastries",
+      "Price": 3.25,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "013",
+      "Name": "Pecan pie",
+      "Category": "Pies",
+      "Price": 16.00,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "014",
+      "Name": "Carrot cake slice",
+      "Category": "Cakes",
+      "Price": 5.50,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "015",
+      "Name": "Brioche bun",
+      "Category": "Breads",
+      "Price": 2.50,
+      "InSeason": true,
+      "SeasonStart": "2026-01-01",
+      "SeasonEnd": "2026-12-31"
+    },
+    {
+      "ID": "016",
+      "Name": "Honey lavender shortbread 6 pack",
+      "Category": "Breads",
+      "Price": 11.00,
+      "InSeason": true,
+      "SeasonStart": "2026-10-01",
+      "SeasonEnd": "2026-12-31"
+    }
+  ],
+  "Customers": [
+    {
+      "Email": "jane.doe@example.com",
+      "Name": "Jane Doe",
+      "Phone": "334-555-0101"
+    },
+    {
+      "Email": "john.smith@example.com",
+      "Name": "John Smith",
+      "Phone": "256-555-0202"
+    },
+    {
+      "Email": "alice.johnson@example.com",
+      "Name": "Alice Johnson",
+      "Phone": "201-555-0303"
+    }
+  ],
+  "SavedOrders": [
+    {
+      "ConfirmationNumber": "OBB-261101-001",
+      "CustomerEmail": "jane.doe@example.com",
+      "PickupTime": "2026-11-05T10:00:00",
+      "Status": "Received",
+      "Lines": []
+    },
+    {
+      "ConfirmationNumber": "OBB-261101-002",
+      "CustomerEmail": "john.smith@example.com",
+      "PickupTime": "2026-11-05T11:30:00",
+      "Status": "Baking",
+      "Lines": []
+    },
+    {
+      "ConfirmationNumber": "OBB-261101-003",
+      "CustomerEmail": "alice.johnson@example.com",
+      "PickupTime": "2026-11-06T09:00:00",
+      "Status": "Ready",
+      "Lines": []
+    },
+    {
+      "ConfirmationNumber": "OBB-261101-004",
+      "CustomerEmail": "jane.doe@example.com",
+      "PickupTime": "2026-11-06T14:00:00",
+      "Status": "Received",
+      "Lines": []
+    },
+    {
+      "ConfirmationNumber": "OBB-261101-005",
+      "CustomerEmail": "john.smith@example.com",
+      "PickupTime": "2026-11-07T08:30:00",
+      "Status": "Received",
+      "Lines": []
+    },
+    {
+      "ConfirmationNumber": "OBB-261101-006",
+      "CustomerEmail": "alice.johnson@example.com",
+      "PickupTime": "2026-11-07T12:00:00",
+      "Status": "Received",
+      "Lines": []
+    },
+    {
+      "ConfirmationNumber": "OBB-261101-007",
+      "CustomerEmail": "jane.doe@example.com",
+      "PickupTime": "2026-11-07T15:30:00",
+      "Status": "Received",
+      "Lines": []
+    },
+    {
+      "ConfirmationNumber": "OBB-261101-008",
+      "CustomerEmail": "john.smith@example.com",
+      "PickupTime": "2026-11-08T10:30:00",
+      "Status": "Received",
+      "Lines": []
+    }
   ]
 }

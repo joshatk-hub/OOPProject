@@ -10,6 +10,7 @@ namespace OOPProjectRev2.Services
     internal class AppState
     {
         public List<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
+        public List<CustomerAccount> Customers { get; set; } = new List<CustomerAccount>();
         public List<Order> SavedOrders { get; set; } = new List<Order>();
     }
 }

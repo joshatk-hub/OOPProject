@@ -8,5 +8,9 @@ namespace OOPProjectRev2.Classes
 {
     internal class Account
     {
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+
     }
 }
