@@ -8,16 +8,36 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OOPProjectRev2.Models;
+using OOPProjectRev2.Services;
 
 namespace OOPProjectRev2
 {
     public partial class CustomerOrdering : Form
     {
+        private readonly DataStore _datastore;
         public CustomerOrdering()
         {
             InitializeComponent();
+            _datastore = new DataStore();
+            _datastore.LoadMenuItems();
         }
-
+        public void GetMenuItems()
+        {
+            List<MenuItem> menuItems = _datastore.LoadMenuItems();
+            listViewItems.Items.Clear();
+            foreach (var item in menuItems)
+            {
+                if (item.InSeason && DateTime.Now.Date >= item.SeasonStart.Date && DateTime.Now.Date <= item.SeasonEnd.Date)
+                {
+                    ListViewItem listViewItem = new ListViewItem(item.Name);
+                    listViewItem.SubItems.Add(item.Category);
+                    listViewItem.SubItems.Add(item.Price.ToString("C"));
+                    listViewItem.Tag = item;
+                    listViewItems.Items.Add(listViewItem);
+                }
+            }
+        }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -35,5 +55,9 @@ namespace OOPProjectRev2
             orderInfo.Show();
         }
 
+        private void CustomerOrdering_Load(object sender, EventArgs e)
+        {
+            GetMenuItems();
+        }
     }
 }
