@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPProjectRev2.Classes
 {
-    internal class Account
+    internal abstract class Account
     {
         public string Email { get; set; }
         public string Name { get; set; }
