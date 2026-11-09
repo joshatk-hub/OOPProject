@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             toolStrip1 = new ToolStrip();
             toolStripButton1 = new ToolStripButton();
             toolStripButton2 = new ToolStripButton();
@@ -36,7 +37,13 @@
             columnName = new ColumnHeader();
             columnHeaderCategory = new ColumnHeader();
             columnHeaderPrice = new ColumnHeader();
+            comboBoxCategory = new ComboBox();
+            menuItemBindingSource1 = new BindingSource(components);
+            menuItemBindingSource = new BindingSource(components);
+            label1 = new Label();
             toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)menuItemBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)menuItemBindingSource).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -107,12 +114,42 @@
             columnHeaderPrice.Text = "Price";
             columnHeaderPrice.Width = 80;
             // 
+            // comboBoxCategory
+            // 
+            comboBoxCategory.FormattingEnabled = true;
+            comboBoxCategory.Items.AddRange(new object[] { "All", "Breads", "Cookies", "Muffins", "Pastries", "Cakes", "Pies", "Extras" });
+            comboBoxCategory.Location = new Point(508, 36);
+            comboBoxCategory.Name = "comboBoxCategory";
+            comboBoxCategory.Size = new Size(182, 33);
+            comboBoxCategory.TabIndex = 2;
+            comboBoxCategory.Text = "All";
+            comboBoxCategory.SelectedIndexChanged += comboBoxCategory_SelectedIndexChanged;
+            // 
+            // menuItemBindingSource1
+            // 
+            menuItemBindingSource1.DataSource = typeof(Models.MenuItem);
+            // 
+            // menuItemBindingSource
+            // 
+            menuItemBindingSource.DataSource = typeof(Models.MenuItem);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(414, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(88, 25);
+            label1.TabIndex = 3;
+            label1.Text = "Category:";
+            // 
             // CustomerOrdering
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(893, 518);
+            Controls.Add(label1);
+            Controls.Add(comboBoxCategory);
             Controls.Add(listViewItems);
             Controls.Add(toolStrip1);
             ForeColor = Color.SaddleBrown;
@@ -121,6 +158,8 @@
             Load += CustomerOrdering_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)menuItemBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)menuItemBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,5 +174,9 @@
         private ColumnHeader columnName;
         private ColumnHeader columnHeaderCategory;
         private ColumnHeader columnHeaderPrice;
+        private ComboBox comboBoxCategory;
+        private BindingSource menuItemBindingSource;
+        private Label label1;
+        private BindingSource menuItemBindingSource1;
     }
 }

@@ -32,7 +32,7 @@ namespace OOPProjectRev2.Services
             string jsonString = File.ReadAllText(_filePath);
             return JsonSerializer.Deserialize<AppState>(jsonString) ?? new AppState();
         }
-        public List<MenuItem> LoadMenuItems()
+        public List<MenuItem> LoadRegularMenuItems()
         {
             var state = LoadData();
             return state.MenuItems;

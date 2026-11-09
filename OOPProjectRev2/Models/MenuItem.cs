@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPProjectRev2.Models
 {
-    public abstract class MenuItem
+    public class MenuItem
     {
         public string Kind { get; set; } // "regular" or "seasonal"
         public string ID { get; set; }
