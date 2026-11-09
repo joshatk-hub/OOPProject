@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPProjectRev2.Classes
+namespace OOPProjectRev2.Models
 {
-    internal class OrderItem
+    internal class RegularItem : MenuItem
     {
     }
 }

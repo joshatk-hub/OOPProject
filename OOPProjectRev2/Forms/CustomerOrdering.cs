@@ -24,19 +24,7 @@ namespace OOPProjectRev2
         }
         public void GetMenuItems()
         {
-            List<MenuItem> menuItems = _datastore.LoadMenuItems();
-            listViewItems.Items.Clear();
-            foreach (var item in menuItems)
-            {
-                if (item.InSeason && DateTime.Now.Date >= item.SeasonStart.Date && DateTime.Now.Date <= item.SeasonEnd.Date)
-                {
-                    ListViewItem listViewItem = new ListViewItem(item.Name);
-                    listViewItem.SubItems.Add(item.Category);
-                    listViewItem.SubItems.Add(item.Price.ToString("C"));
-                    listViewItem.Tag = item;
-                    listViewItems.Items.Add(listViewItem);
-                }
-            }
+            
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {

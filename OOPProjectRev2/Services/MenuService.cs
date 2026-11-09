@@ -18,8 +18,6 @@ namespace OOPProjectRev2.Services
 
         public List<MenuItem> GetAllActiveMenuItems(DateTime currentDate)
         {
-            var allItems = _dataStore.LoadMenuItems();
-            return allItems.Where(item => item.InSeason(currentDate)).ToList(); // filter items seasonally
         }
 
         public List<MenuItem> GetItemsByCategory(string category, DateTime currentDate)

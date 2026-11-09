@@ -1,146 +1,148 @@
 {
   "MenuItems": [
     {
+      "Kind": "Regular",
       "ID": "001",
-      "Name": "Sourdough bread",
+      "Name": "Sourdough loaf",
       "Category": "Breads",
-      "Price": 6.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Slow-fermented country loaf with a crisp crust.",
+      "Price": 7.5,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "002",
-      "Name": "Chocolate chip cookies",
+      "Name": "Chocolate chip cookie",
       "Category": "Cookies",
-      "Price": 1.50,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Soft and chewy with semi-sweet chocolate chunks.",
+      "Price": 2.25,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "003",
       "Name": "Blueberry muffin",
       "Category": "Muffins",
-      "Price": 3.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Tender muffin packed with blueberries.",
+      "Price": 3,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "004",
       "Name": "Cinnamon roll",
       "Category": "Pastries",
-      "Price": 3.50,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Warm roll with cinnamon swirl and cream cheese icing.",
+      "Price": 3.75,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "005",
-      "Name": "Apple pie",
+      "Name": "Apple pie 9 inch",
       "Category": "Pies",
-      "Price": 15.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Classic double-crust pie with spiced apples.",
+      "Price": 22,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "006",
       "Name": "Custom decorated cake",
       "Category": "Cakes",
-      "Price": 45.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Made to order with your message. Requires extra notice.",
+      "Price": 45,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "007",
       "Name": "Honey butter jar",
       "Category": "Extras",
-      "Price": 6.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Whipped butter with local honey. Great with fresh bread.",
+      "Price": 5,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "008",
       "Name": "Italian Loaf",
       "Category": "Breads",
-      "Price": 4.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Soft-centered loaf with a golden crust.",
+      "Price": 4,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "009",
       "Name": "Baguette",
       "Category": "Breads",
-      "Price": 4.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Long, crusty French-style loaf.",
+      "Price": 4,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "010",
       "Name": "Oatmeal raisin cookie",
       "Category": "Cookies",
+      "Description": "Hearty oats and plump raisins with a hint of cinnamon.",
       "Price": 2.25,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "011",
       "Name": "Bran muffin",
       "Category": "Muffins",
-      "Price": 3.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Wholesome muffin sweetened with molasses.",
+      "Price": 3,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "012",
       "Name": "Croissant",
       "Category": "Pastries",
+      "Description": "Flaky, buttery, and baked fresh.",
       "Price": 3.25,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "013",
       "Name": "Pecan pie",
       "Category": "Pies",
-      "Price": 16.00,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Rich filling topped with toasted pecans.",
+      "Price": 16,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "014",
       "Name": "Carrot cake slice",
       "Category": "Cakes",
-      "Price": 5.50,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Spiced cake with cream cheese frosting.",
+      "Price": 5.5,
+      "IsActive": true
     },
     {
+      "Kind": "Regular",
       "ID": "015",
       "Name": "Brioche bun",
       "Category": "Breads",
-      "Price": 2.50,
-      "InSeason": true,
-      "SeasonStart": "2026-01-01",
-      "SeasonEnd": "2026-12-31"
+      "Description": "Rich, soft bun made with butter and eggs.",
+      "Price": 2.5,
+      "IsActive": true
     },
     {
+      "Kind": "Seasonal",
       "ID": "016",
       "Name": "Honey lavender shortbread 6 pack",
-      "Category": "Breads",
-      "Price": 11.00,
-      "InSeason": true,
+      "Category": "Cookies",
+      "Description": "Buttery shortbread with honey and lavender. Holiday season only.",
+      "Price": 11,
+      "IsActive": true,
       "SeasonStart": "2026-10-01",
       "SeasonEnd": "2026-12-31"
     }
