@@ -21,17 +21,39 @@ namespace OOPProjectRev2
             InitializeComponent();
             _datastore = new DataStore();
             _datastore.LoadRegularMenuItems();
+            _datastore.LoadSeasonalMenuItems();
         }
         public void GetMenuItems()
         {
+            listViewItems.Items.Clear();
+
             foreach (var item in _datastore.LoadRegularMenuItems())
             {
-                ListViewItem listViewItem = new ListViewItem(item.Name);
-                listViewItem.SubItems.Add(item.Category);
-                listViewItem.SubItems.Add(item.Price.ToString("C"));
-                listViewItems.Items.Add(listViewItem);
+                AddMenuItemToListView(item);
+            }
+
+            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+
+            foreach (var item in _datastore.LoadSeasonalMenuItems())
+            {
+                DateOnly seasonStart = DateOnly.Parse(item.SeasonStart);
+                DateOnly seasonEnd = DateOnly.Parse(item.SeasonEnd);
+
+                if (today >= seasonStart && today <= seasonEnd)
+                {
+                    AddMenuItemToListView(item);
+                }
             }
         }
+
+        private void AddMenuItemToListView(MenuItem item)
+        {
+            ListViewItem listViewItem = new ListViewItem(item.Name);
+            listViewItem.SubItems.Add(item.Category);
+            listViewItem.SubItems.Add(item.Price.ToString("C"));
+            listViewItems.Items.Add(listViewItem);
+        }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,6 +78,7 @@ namespace OOPProjectRev2
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listViewItems.BeginUpdate();
             if (comboBoxCategory.SelectedItem.ToString() == "All")
             {
                 listViewItems.Items.Clear();
@@ -81,6 +104,9 @@ namespace OOPProjectRev2
                     }
                 }
             }
+            listViewItems.EndUpdate();
         }
+
+        
     }
 }

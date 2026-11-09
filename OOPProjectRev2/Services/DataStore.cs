@@ -37,5 +37,10 @@ namespace OOPProjectRev2.Services
             var state = LoadData();
             return state.MenuItems;
         }
+        public List<SeasonalItem> LoadSeasonalMenuItems()
+        {
+            var state = LoadData();
+            return state.SeasonalItems;
+        }
     }
 }

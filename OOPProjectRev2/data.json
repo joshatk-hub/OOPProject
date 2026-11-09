@@ -134,7 +134,9 @@
       "Description": "Rich, soft bun made with butter and eggs.",
       "Price": 2.5,
       "IsActive": true
-    },
+    }
+  ],
+  "SeasonalItems": [
     {
       "Kind": "Seasonal",
       "ID": "016",
@@ -145,6 +147,17 @@
       "IsActive": true,
       "SeasonStart": "2026-10-01",
       "SeasonEnd": "2026-12-31"
+    },
+    {
+      "Kind" :  "Seasonal",
+      "ID": "017",
+      "Name": "Pumpkin spice latte 12 oz",
+      "Category": "Beverages",
+      "Description": "Seasonal favorite with pumpkin, spice, and espresso.",
+      "Price": 4.5,
+      "IsActive": true,
+      "SeasonStart": "2026-05-01",
+      "SeasonEnd": "2026-06-01"
     }
   ],
   "Customers": [

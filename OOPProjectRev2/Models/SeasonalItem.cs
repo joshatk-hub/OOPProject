@@ -8,18 +8,8 @@ namespace OOPProjectRev2.Models
 {
     internal class SeasonalItem : MenuItem
     {
-        public DateTime SeasonStart { get; set; }
-        public DateTime SeasonEnd { get; set; }
-        public virtual bool InSeason(DateTime currentDate)
-        {
-            if (SeasonStart <= SeasonEnd)
-            {
-                return currentDate.Date >= SeasonStart.Date && currentDate.Date <= SeasonEnd.Date;
-            }
-            else
-            {
-                return currentDate.Date >= SeasonStart.Date || currentDate.Date <= SeasonEnd.Date;
-            }
-        }
+        public string SeasonStart { get; set; }
+        public string SeasonEnd { get; set; }
+        
     }
 }
