@@ -21,11 +21,11 @@ namespace OOPProjectRev2.Models
             if (existingLine != null)
             {
                 existingLine.Quantity += quantity;
-                
             }
             else
             {
-                OrderLines.Add(new OrderLine { Item = item, Quantity = quantity });
+                var line = new OrderLine { Item = item, Quantity = quantity };
+                OrderLines.Add(line);
             }
         }
         public void UpdateQuantity(string itemId, int quantity)

@@ -22,7 +22,6 @@ namespace OOPProjectRev2
             _dataRepository = new DataStore();
             _accountService = new AccountService(_dataRepository);
         }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();

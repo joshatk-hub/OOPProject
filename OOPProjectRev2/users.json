@@ -24,57 +24,49 @@
       "ConfirmationNumber": "OBB-261101-001",
       "CustomerEmail": "jane.doe@example.com",
       "PickupTime": "2026-11-05T10:00:00",
-      "Status": "Received",
-      "Lines": []
+      "Status": "Received"
     },
     {
       "ConfirmationNumber": "OBB-261101-002",
       "CustomerEmail": "john.smith@example.com",
       "PickupTime": "2026-11-05T11:30:00",
-      "Status": "Baking",
-      "Lines": []
+      "Status": "Baking"
     },
     {
       "ConfirmationNumber": "OBB-261101-003",
       "CustomerEmail": "alice.johnson@example.com",
       "PickupTime": "2026-11-06T09:00:00",
-      "Status": "Ready",
-      "Lines": []
+      "Status": "Ready"
     },
     {
       "ConfirmationNumber": "OBB-261101-004",
       "CustomerEmail": "jane.doe@example.com",
       "PickupTime": "2026-11-06T14:00:00",
-      "Status": "Received",
-      "Lines": []
+      "Status": "Received"
     },
     {
       "ConfirmationNumber": "OBB-261101-005",
       "CustomerEmail": "john.smith@example.com",
       "PickupTime": "2026-11-07T08:30:00",
-      "Status": "Received",
-      "Lines": []
+      "Status": "Received"
     },
     {
       "ConfirmationNumber": "OBB-261101-006",
       "CustomerEmail": "alice.johnson@example.com",
       "PickupTime": "2026-11-07T12:00:00",
-      "Status": "Received",
-      "Lines": []
+      "Status": "Received"
     },
     {
       "ConfirmationNumber": "OBB-261101-007",
       "CustomerEmail": "jane.doe@example.com",
       "PickupTime": "2026-11-07T15:30:00",
-      "Status": "Received",
-      "Lines": []
+      "Status": "Received"
     },
     {
       "ConfirmationNumber": "OBB-261101-008",
       "CustomerEmail": "john.smith@example.com",
       "PickupTime": "2026-11-08T10:30:00",
-      "Status": "Received",
-      "Lines": []
+      "Status": "Received"
     }
   ]
 }

@@ -45,6 +45,12 @@ namespace OOPProjectRev2.Services
             string jsonString = File.ReadAllText(_filePathAccounts);
             return JsonSerializer.Deserialize<UserAccount>(jsonString) ?? new UserAccount();
         }
+        public Order LoadOrder()
+        {
+            if (!File.Exists(_filePathAccounts)) return new Order();
+            string jsonString = File.ReadAllText(_filePathAccounts);
+            return JsonSerializer.Deserialize<Order>(jsonString) ?? new Order();
+        }
         public List<OrderLine> LoadOrderLines()
         {
             var cart = LoadCart();
