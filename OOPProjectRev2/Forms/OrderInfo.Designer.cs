@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker = new DateTimePicker();
             label1 = new Label();
             btnPlaceOrder = new Button();
             listViewItems = new ListView();
@@ -43,25 +43,31 @@
             labelSubtotal = new Label();
             labelTaxAmt = new Label();
             buttonClear = new Button();
+            labelPickup = new Label();
+            textBoxNotes = new TextBox();
+            label2 = new Label();
             SuspendLayout();
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            dateTimePicker1.CalendarForeColor = Color.SaddleBrown;
-            dateTimePicker1.CalendarMonthBackground = Color.BlanchedAlmond;
-            dateTimePicker1.Location = new Point(517, 114);
-            dateTimePicker1.Margin = new Padding(2);
-            dateTimePicker1.MaxDate = new DateTime(2026, 10, 27, 0, 0, 0, 0);
-            dateTimePicker1.MinDate = new DateTime(2026, 10, 19, 0, 0, 0, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(229, 23);
-            dateTimePicker1.TabIndex = 1;
-            dateTimePicker1.Value = new DateTime(2026, 10, 19, 0, 0, 0, 0);
+            dateTimePicker.CalendarForeColor = Color.SaddleBrown;
+            dateTimePicker.CalendarMonthBackground = Color.BlanchedAlmond;
+            dateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm";
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.Location = new Point(517, 133);
+            dateTimePicker.Margin = new Padding(2);
+            dateTimePicker.MaxDate = new DateTime(2027, 5, 1, 0, 0, 0, 0);
+            dateTimePicker.MinDate = new DateTime(2024, 4, 1, 0, 0, 0, 0);
+            dateTimePicker.Name = "dateTimePicker";
+            dateTimePicker.Size = new Size(229, 23);
+            dateTimePicker.TabIndex = 1;
+            dateTimePicker.Value = new DateTime(2026, 11, 10, 20, 40, 13, 0);
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(557, 97);
+            label1.ForeColor = Color.SaddleBrown;
+            label1.Location = new Point(557, 116);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(139, 15);
@@ -73,7 +79,7 @@
             btnPlaceOrder.BackColor = Color.BlanchedAlmond;
             btnPlaceOrder.FlatStyle = FlatStyle.Flat;
             btnPlaceOrder.ForeColor = Color.SaddleBrown;
-            btnPlaceOrder.Location = new Point(517, 196);
+            btnPlaceOrder.Location = new Point(426, 295);
             btnPlaceOrder.Margin = new Padding(2);
             btnPlaceOrder.Name = "btnPlaceOrder";
             btnPlaceOrder.Size = new Size(87, 45);
@@ -125,7 +131,7 @@
             buttonAdd.BackColor = Color.BlanchedAlmond;
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.ForeColor = Color.SaddleBrown;
-            buttonAdd.Location = new Point(517, 141);
+            buttonAdd.Location = new Point(11, 295);
             buttonAdd.Margin = new Padding(2);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(87, 42);
@@ -139,7 +145,7 @@
             buttonRemove.BackColor = Color.BlanchedAlmond;
             buttonRemove.FlatStyle = FlatStyle.Flat;
             buttonRemove.ForeColor = Color.SaddleBrown;
-            buttonRemove.Location = new Point(655, 141);
+            buttonRemove.Location = new Point(102, 295);
             buttonRemove.Margin = new Padding(2);
             buttonRemove.Name = "buttonRemove";
             buttonRemove.Size = new Size(91, 42);
@@ -151,6 +157,7 @@
             // labelTotal
             // 
             labelTotal.AutoSize = true;
+            labelTotal.ForeColor = Color.SaddleBrown;
             labelTotal.Location = new Point(517, 69);
             labelTotal.Margin = new Padding(2, 0, 2, 0);
             labelTotal.Name = "labelTotal";
@@ -161,6 +168,7 @@
             // labelSubtotal
             // 
             labelSubtotal.AutoSize = true;
+            labelSubtotal.ForeColor = Color.SaddleBrown;
             labelSubtotal.Location = new Point(517, 9);
             labelSubtotal.Margin = new Padding(2, 0, 2, 0);
             labelSubtotal.Name = "labelSubtotal";
@@ -171,6 +179,7 @@
             // labelTaxAmt
             // 
             labelTaxAmt.AutoSize = true;
+            labelTaxAmt.ForeColor = Color.SaddleBrown;
             labelTaxAmt.Location = new Point(517, 40);
             labelTaxAmt.Margin = new Padding(2, 0, 2, 0);
             labelTaxAmt.Name = "labelTaxAmt";
@@ -183,21 +192,52 @@
             buttonClear.BackColor = Color.BlanchedAlmond;
             buttonClear.FlatStyle = FlatStyle.Flat;
             buttonClear.ForeColor = Color.SaddleBrown;
-            buttonClear.Location = new Point(655, 196);
+            buttonClear.Location = new Point(197, 295);
             buttonClear.Margin = new Padding(2);
             buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(87, 45);
+            buttonClear.Size = new Size(91, 45);
             buttonClear.TabIndex = 11;
             buttonClear.Text = "Clear Order";
             buttonClear.UseVisualStyleBackColor = false;
             buttonClear.Click += buttonClear_Click;
+            // 
+            // labelPickup
+            // 
+            labelPickup.AutoSize = true;
+            labelPickup.ForeColor = Color.SaddleBrown;
+            labelPickup.Location = new Point(518, 93);
+            labelPickup.Name = "labelPickup";
+            labelPickup.Size = new Size(116, 15);
+            labelPickup.TabIndex = 12;
+            labelPickup.Text = "Earliest Pickup Time:";
+            // 
+            // textBoxNotes
+            // 
+            textBoxNotes.Location = new Point(517, 186);
+            textBoxNotes.Multiline = true;
+            textBoxNotes.Name = "textBoxNotes";
+            textBoxNotes.Size = new Size(229, 105);
+            textBoxNotes.TabIndex = 13;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.SaddleBrown;
+            label2.Location = new Point(610, 168);
+            label2.Name = "label2";
+            label2.Size = new Size(41, 15);
+            label2.TabIndex = 14;
+            label2.Text = "Notes:";
             // 
             // OrderInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(763, 324);
+            ClientSize = new Size(756, 403);
+            Controls.Add(label2);
+            Controls.Add(textBoxNotes);
+            Controls.Add(labelPickup);
             Controls.Add(buttonClear);
             Controls.Add(labelTaxAmt);
             Controls.Add(labelSubtotal);
@@ -207,7 +247,7 @@
             Controls.Add(listViewItems);
             Controls.Add(btnPlaceOrder);
             Controls.Add(label1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dateTimePicker);
             Margin = new Padding(2);
             Name = "OrderInfo";
             Text = "OrderInfo";
@@ -217,7 +257,7 @@
         }
 
         #endregion
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker;
         private Label label1;
         private Button btnPlaceOrder;
         private ListView listViewItems;
@@ -232,5 +272,8 @@
         private Label labelSubtotal;
         private Label labelTaxAmt;
         private Button buttonClear;
+        private Label labelPickup;
+        private TextBox textBoxNotes;
+        private Label label2;
     }
 }

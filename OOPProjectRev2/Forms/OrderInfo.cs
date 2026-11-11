@@ -42,15 +42,47 @@ namespace OOPProjectRev2
             labelSubtotal.Text = $"Subtotal: {_datastore.LoadCart().GetSubtotal():C}";
             labelTaxAmt.Text = $"Tax: {_datastore.LoadCart().GetTax():C}";
             labelTotal.Text = $"Total: {_datastore.LoadCart().GetTotal():C}";
+            labelPickup.Text = PickupDate();
+        }
+        private string PickupDate()
+        {
+            foreach (var orderLine in _currentCart.OrderLines)
+            {
+                DateTime minimumAllowedDateTime = DateTime.Now.AddHours(orderLine.Item.LeadTime);
+                string labelPickup = $"The earliest you can pick up your order is {minimumAllowedDateTime:g}.";
+                return labelPickup;
+            }
+            return "No valid pickup date available.";
         }
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thank you for placing an order! You may pick it up at the time selected.");
-            this.Close();
+            if (_currentCart.OrderLines.Count == 0)
+            {
+                MessageBox.Show("Your cart is empty. Please add items to your cart before placing an order.");
+                return;
+            }
+            if (dateTimePicker.Value < DateTime.Now)
+            {
+                MessageBox.Show("Please select a valid date and time for your order.");
+                return;
+            }
+            foreach (var orderLine in _currentCart.OrderLines)
+            {
+                DateTime minimumAllowedDateTime = DateTime.Now.AddHours(orderLine.Item.LeadTime);
+                
+                if (dateTimePicker.Value < minimumAllowedDateTime)
+                {
+                    MessageBox.Show($"The item '{orderLine.Item.Name}' requires a lead time of {orderLine.Item.LeadTime} hours. The earliest you can place this order is {minimumAllowedDateTime:g}.");
+                    return;
+                }
+            }
+            MessageBox.Show("Order placed successfully!");
+
         }
 
         private void OrderInfo_Load(object sender, EventArgs e)
         {
+            textBoxNotes.Clear();
             UpdateCartDisplay();
         }
 
@@ -93,6 +125,10 @@ namespace OOPProjectRev2
         {
             listViewItems.Items.Clear();
             _currentCart.Clear();
+            textBoxNotes.Clear();
+            UpdateCartDisplay();
         }
+
+
     }
 }

@@ -32,5 +32,6 @@ namespace OOPProjectRev2.Models
         public static decimal TaxRate = .08m;
         public decimal TaxAmt => (LineTotal * TaxRate);
         public decimal Total => LineTotal + TaxAmt;
+        public string Notes { get; set; } = string.Empty;
     }
 }
