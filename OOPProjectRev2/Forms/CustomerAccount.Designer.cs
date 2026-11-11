@@ -28,42 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            textBoxNumber = new TextBox();
+            textBoxEmail = new TextBox();
+            textBoxPassword = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            button1 = new Button();
+            buttonSignIn = new Button();
             linkLabel1 = new LinkLabel();
+            listViewOrders = new ListView();
+            columnHeaderConfirmation = new ColumnHeader();
+            columnHeaderPickup = new ColumnHeader();
+            columnHeaderStatus = new ColumnHeader();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxNumber
             // 
-            textBox1.BackColor = Color.BlanchedAlmond;
-            textBox1.Location = new Point(117, 35);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(106, 23);
-            textBox1.TabIndex = 0;
+            textBoxNumber.BackColor = Color.BlanchedAlmond;
+            textBoxNumber.ForeColor = Color.SaddleBrown;
+            textBoxNumber.Location = new Point(117, 35);
+            textBoxNumber.Margin = new Padding(2);
+            textBoxNumber.Name = "textBoxNumber";
+            textBoxNumber.Size = new Size(178, 23);
+            textBoxNumber.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxEmail
             // 
-            textBox2.BackColor = Color.BlanchedAlmond;
-            textBox2.Location = new Point(117, 59);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(106, 23);
-            textBox2.TabIndex = 1;
+            textBoxEmail.BackColor = Color.BlanchedAlmond;
+            textBoxEmail.ForeColor = Color.SaddleBrown;
+            textBoxEmail.Location = new Point(117, 59);
+            textBoxEmail.Margin = new Padding(2);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(178, 23);
+            textBoxEmail.TabIndex = 1;
             // 
-            // textBox3
+            // textBoxPassword
             // 
-            textBox3.BackColor = Color.BlanchedAlmond;
-            textBox3.Location = new Point(117, 83);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(106, 23);
-            textBox3.TabIndex = 2;
+            textBoxPassword.BackColor = Color.BlanchedAlmond;
+            textBoxPassword.ForeColor = Color.SaddleBrown;
+            textBoxPassword.Location = new Point(117, 83);
+            textBoxPassword.Margin = new Padding(2);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(178, 23);
+            textBoxPassword.TabIndex = 2;
             // 
             // label1
             // 
@@ -95,24 +102,24 @@
             label3.TabIndex = 5;
             label3.Text = "Password:";
             // 
-            // button1
+            // buttonSignIn
             // 
-            button1.BackColor = Color.BlanchedAlmond;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(130, 113);
-            button1.Margin = new Padding(2, 2, 2, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(78, 27);
-            button1.TabIndex = 6;
-            button1.Text = "Sign In";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            buttonSignIn.BackColor = Color.BlanchedAlmond;
+            buttonSignIn.FlatStyle = FlatStyle.Flat;
+            buttonSignIn.Location = new Point(156, 113);
+            buttonSignIn.Margin = new Padding(2);
+            buttonSignIn.Name = "buttonSignIn";
+            buttonSignIn.Size = new Size(78, 27);
+            buttonSignIn.TabIndex = 6;
+            buttonSignIn.Text = "Sign In";
+            buttonSignIn.UseVisualStyleBackColor = false;
+            buttonSignIn.Click += buttonSignIn_Click;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.IndianRed;
-            linkLabel1.Location = new Point(106, 142);
+            linkLabel1.Location = new Point(135, 142);
             linkLabel1.Margin = new Padding(2, 0, 2, 0);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(117, 15);
@@ -121,22 +128,49 @@
             linkLabel1.Text = "or, continue as guest";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // listViewOrders
+            // 
+            listViewOrders.BackColor = SystemColors.Window;
+            listViewOrders.Columns.AddRange(new ColumnHeader[] { columnHeaderConfirmation, columnHeaderPickup, columnHeaderStatus });
+            listViewOrders.ForeColor = SystemColors.ActiveCaptionText;
+            listViewOrders.Location = new Point(330, 35);
+            listViewOrders.Name = "listViewOrders";
+            listViewOrders.Size = new Size(296, 200);
+            listViewOrders.TabIndex = 8;
+            listViewOrders.UseCompatibleStateImageBehavior = false;
+            listViewOrders.View = View.Details;
+            // 
+            // columnHeaderConfirmation
+            // 
+            columnHeaderConfirmation.Text = "Confirmation Number";
+            columnHeaderConfirmation.Width = 120;
+            // 
+            // columnHeaderPickup
+            // 
+            columnHeaderPickup.Text = "Pickup Time";
+            columnHeaderPickup.Width = 100;
+            // 
+            // columnHeaderStatus
+            // 
+            columnHeaderStatus.Text = "Status";
+            // 
             // CustomerAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(329, 181);
+            ClientSize = new Size(638, 317);
+            Controls.Add(listViewOrders);
             Controls.Add(linkLabel1);
-            Controls.Add(button1);
+            Controls.Add(buttonSignIn);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxEmail);
+            Controls.Add(textBoxNumber);
             ForeColor = Color.SaddleBrown;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "CustomerAccount";
             Text = "Account";
             ResumeLayout(false);
@@ -145,13 +179,17 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textBoxNumber;
+        private TextBox textBoxEmail;
+        private TextBox textBoxPassword;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button1;
+        private Button buttonSignIn;
         private LinkLabel linkLabel1;
+        private ListView listViewOrders;
+        private ColumnHeader columnHeaderConfirmation;
+        private ColumnHeader columnHeaderPickup;
+        private ColumnHeader columnHeaderStatus;
     }
 }

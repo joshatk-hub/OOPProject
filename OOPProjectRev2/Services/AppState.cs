@@ -11,7 +11,7 @@ namespace OOPProjectRev2.Services
     {
         public List<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
         public List<SeasonalItem> SeasonalItems { get; set; } = new List<SeasonalItem>();
-        public List<CustomerAccount> Customers { get; set; } = new List<CustomerAccount>();
+        public List<UserAccount> Customers { get; set; } = new List<UserAccount>();
         public List<Order> SavedOrders { get; set; } = new List<Order>();
     }
 }
