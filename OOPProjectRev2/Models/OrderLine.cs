@@ -11,5 +11,8 @@ namespace OOPProjectRev2.Models
         public MenuItem Item { get; set; }
         public int Quantity { get; set; }
         public decimal LineTotal => Item.Price * Quantity;
+        public static decimal TaxRate = .08m;
+        public decimal TaxAmt => (LineTotal * TaxRate);
+        public decimal Total => LineTotal + TaxAmt;
     }
 }

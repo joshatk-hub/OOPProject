@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OOPProjectRev2.Models;
@@ -107,6 +108,22 @@ namespace OOPProjectRev2
             listViewItems.EndUpdate();
         }
 
-        
+        private void buttonAddCart_Click(object sender, EventArgs e)
+        {
+            var item = listViewItems.SelectedItems[0];
+            if (item != null)
+            {
+                string itemName = item.SubItems[0].Text;
+                var menuItem = _datastore.LoadRegularMenuItems().FirstOrDefault(i => i.Name == itemName) ??
+                               _datastore.LoadSeasonalMenuItems().FirstOrDefault(i => i.Name == itemName);
+                if (menuItem != null)
+                {
+                    Cart cart = _datastore.LoadCart();
+                    cart.AddItem(menuItem, 1);
+                    _datastore.SaveCart(cart);
+                    MessageBox.Show($"{menuItem.Name} has been added to your cart.");
+                }
+            }
+        }
     }
 }

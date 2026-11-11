@@ -12,7 +12,7 @@ namespace OOPProjectRev2.Services
     internal class DataStore
     {
         private readonly string _filePath = "C:\\Users\\josha\\source\\repos\\OOPProjectRev2\\OOPProjectRev2\\data.json";
-        
+        private readonly string _filePathCart = "C:\\Users\\josha\\source\\repos\\OOPProjectRev2\\OOPProjectRev2\\cart.json";
         public void SaveData(AppState state)
         {
             var options = new JsonSerializerOptions
@@ -21,6 +21,15 @@ namespace OOPProjectRev2.Services
             };
             string jsonData = JsonSerializer.Serialize(state, options);
             File.WriteAllText(_filePath, jsonData);
+        }
+        public void SaveCart(Cart cart)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            string jsonData = JsonSerializer.Serialize(cart, options);
+            File.WriteAllText(_filePathCart, jsonData);
         }
         public AppState LoadData()
         {
@@ -31,6 +40,20 @@ namespace OOPProjectRev2.Services
 
             string jsonString = File.ReadAllText(_filePath);
             return JsonSerializer.Deserialize<AppState>(jsonString) ?? new AppState();
+        }
+        public Cart LoadCart()
+        {
+            if (!File.Exists(_filePathCart))
+            {
+                return new Cart(); // returns empty if there's a file pathing issue
+            }
+            string jsonString = File.ReadAllText(_filePathCart);
+            return JsonSerializer.Deserialize<Cart>(jsonString) ?? new Cart();
+        }
+        public List<OrderLine> LoadOrderLines()
+        {
+            var cart = LoadCart();
+            return cart.OrderLines;
         }
         public List<MenuItem> LoadRegularMenuItems()
         {

@@ -41,6 +41,7 @@
             menuItemBindingSource1 = new BindingSource(components);
             menuItemBindingSource = new BindingSource(components);
             label1 = new Label();
+            buttonAddCart = new Button();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menuItemBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)menuItemBindingSource).BeginInit();
@@ -142,12 +143,24 @@
             label1.TabIndex = 3;
             label1.Text = "Category:";
             // 
+            // buttonAddCart
+            // 
+            buttonAddCart.BackColor = Color.BlanchedAlmond;
+            buttonAddCart.Location = new Point(467, 164);
+            buttonAddCart.Name = "buttonAddCart";
+            buttonAddCart.Size = new Size(182, 86);
+            buttonAddCart.TabIndex = 4;
+            buttonAddCart.Text = "Add to Cart";
+            buttonAddCart.UseVisualStyleBackColor = false;
+            buttonAddCart.Click += buttonAddCart_Click;
+            // 
             // CustomerOrdering
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(893, 518);
+            Controls.Add(buttonAddCart);
             Controls.Add(label1);
             Controls.Add(comboBoxCategory);
             Controls.Add(listViewItems);
@@ -178,5 +191,6 @@
         private BindingSource menuItemBindingSource;
         private Label label1;
         private BindingSource menuItemBindingSource1;
+        private Button buttonAddCart;
     }
 }
