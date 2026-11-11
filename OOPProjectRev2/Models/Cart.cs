@@ -64,6 +64,7 @@ namespace OOPProjectRev2.Models
 
         public void Clear()
         {
+            _dataStore.SaveCart(new Cart()); // ave an empty cart to the datastore
             OrderLines.Clear();
         }
         public decimal GetSubtotal()

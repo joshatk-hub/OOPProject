@@ -61,7 +61,7 @@ namespace OOPProjectRev2
                 MessageBox.Show("Please select an item to add.");
                 return;
             }
-            
+
             else
             {
                 var selectedItem = listViewItems.SelectedItems[0].Text;
@@ -76,7 +76,7 @@ namespace OOPProjectRev2
         {
             if (listViewItems.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Please select an item to add.");
+                MessageBox.Show("Please select an item to remove.");
                 return;
             }
             else
@@ -87,6 +87,12 @@ namespace OOPProjectRev2
                 _datastore.SaveCart(_currentCart);
                 UpdateCartDisplay();
             }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            listViewItems.Items.Clear();
+            _currentCart.Clear();
         }
     }
 }

@@ -128,7 +128,6 @@ namespace OOPProjectRev2
                         Cart cart = _datastore.LoadCart();
                         cart.AddItem(menuItem, 1);
                         _datastore.SaveCart(cart);
-                        MessageBox.Show($"{menuItem.Name} has been added to your cart.");
                     }
                 }
             }

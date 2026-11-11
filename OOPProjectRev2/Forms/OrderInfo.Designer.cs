@@ -42,13 +42,14 @@
             labelTotal = new Label();
             labelSubtotal = new Label();
             labelTaxAmt = new Label();
+            buttonClear = new Button();
             SuspendLayout();
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.CalendarForeColor = Color.SaddleBrown;
             dateTimePicker1.CalendarMonthBackground = Color.BlanchedAlmond;
-            dateTimePicker1.Location = new Point(438, 101);
+            dateTimePicker1.Location = new Point(517, 114);
             dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.MaxDate = new DateTime(2026, 10, 27, 0, 0, 0, 0);
             dateTimePicker1.MinDate = new DateTime(2026, 10, 19, 0, 0, 0, 0);
@@ -60,7 +61,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(480, 84);
+            label1.Location = new Point(557, 97);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(139, 15);
@@ -72,10 +73,10 @@
             btnPlaceOrder.BackColor = Color.BlanchedAlmond;
             btnPlaceOrder.FlatStyle = FlatStyle.Flat;
             btnPlaceOrder.ForeColor = Color.SaddleBrown;
-            btnPlaceOrder.Location = new Point(512, 169);
+            btnPlaceOrder.Location = new Point(517, 196);
             btnPlaceOrder.Margin = new Padding(2);
             btnPlaceOrder.Name = "btnPlaceOrder";
-            btnPlaceOrder.Size = new Size(83, 38);
+            btnPlaceOrder.Size = new Size(87, 45);
             btnPlaceOrder.TabIndex = 3;
             btnPlaceOrder.Text = "Place Order";
             btnPlaceOrder.UseVisualStyleBackColor = false;
@@ -89,7 +90,7 @@
             listViewItems.Location = new Point(8, 7);
             listViewItems.Margin = new Padding(2);
             listViewItems.Name = "listViewItems";
-            listViewItems.Size = new Size(426, 284);
+            listViewItems.Size = new Size(505, 284);
             listViewItems.TabIndex = 5;
             listViewItems.UseCompatibleStateImageBehavior = false;
             listViewItems.View = View.Details;
@@ -124,7 +125,7 @@
             buttonAdd.BackColor = Color.BlanchedAlmond;
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.ForeColor = Color.SaddleBrown;
-            buttonAdd.Location = new Point(438, 123);
+            buttonAdd.Location = new Point(517, 141);
             buttonAdd.Margin = new Padding(2);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(87, 42);
@@ -138,7 +139,7 @@
             buttonRemove.BackColor = Color.BlanchedAlmond;
             buttonRemove.FlatStyle = FlatStyle.Flat;
             buttonRemove.ForeColor = Color.SaddleBrown;
-            buttonRemove.Location = new Point(575, 123);
+            buttonRemove.Location = new Point(655, 141);
             buttonRemove.Margin = new Padding(2);
             buttonRemove.Name = "buttonRemove";
             buttonRemove.Size = new Size(91, 42);
@@ -150,7 +151,7 @@
             // labelTotal
             // 
             labelTotal.AutoSize = true;
-            labelTotal.Location = new Point(438, 59);
+            labelTotal.Location = new Point(517, 69);
             labelTotal.Margin = new Padding(2, 0, 2, 0);
             labelTotal.Name = "labelTotal";
             labelTotal.Size = new Size(84, 15);
@@ -160,7 +161,7 @@
             // labelSubtotal
             // 
             labelSubtotal.AutoSize = true;
-            labelSubtotal.Location = new Point(438, 7);
+            labelSubtotal.Location = new Point(517, 9);
             labelSubtotal.Margin = new Padding(2, 0, 2, 0);
             labelSubtotal.Name = "labelSubtotal";
             labelSubtotal.Size = new Size(102, 15);
@@ -170,19 +171,34 @@
             // labelTaxAmt
             // 
             labelTaxAmt.AutoSize = true;
-            labelTaxAmt.Location = new Point(438, 32);
+            labelTaxAmt.Location = new Point(517, 40);
             labelTaxAmt.Margin = new Padding(2, 0, 2, 0);
             labelTaxAmt.Name = "labelTaxAmt";
             labelTaxAmt.Size = new Size(75, 15);
             labelTaxAmt.TabIndex = 10;
             labelTaxAmt.Text = "Order Tax: $0";
             // 
+            // buttonClear
+            // 
+            buttonClear.BackColor = Color.BlanchedAlmond;
+            buttonClear.FlatStyle = FlatStyle.Flat;
+            buttonClear.ForeColor = Color.SaddleBrown;
+            buttonClear.Location = new Point(655, 196);
+            buttonClear.Margin = new Padding(2);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(87, 45);
+            buttonClear.TabIndex = 11;
+            buttonClear.Text = "Clear Order";
+            buttonClear.UseVisualStyleBackColor = false;
+            buttonClear.Click += buttonClear_Click;
+            // 
             // OrderInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(675, 324);
+            ClientSize = new Size(763, 324);
+            Controls.Add(buttonClear);
             Controls.Add(labelTaxAmt);
             Controls.Add(labelSubtotal);
             Controls.Add(labelTotal);
@@ -215,5 +231,6 @@
         private Label labelTotal;
         private Label labelSubtotal;
         private Label labelTaxAmt;
+        private Button buttonClear;
     }
 }

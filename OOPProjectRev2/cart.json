@@ -1,3 +1,19 @@
 {
-  "OrderLines": []
+  "OrderLines": [
+    {
+      "Item": {
+        "Kind": "Regular",
+        "ID": "002",
+        "Name": "Chocolate chip cookie",
+        "Category": "Cookies",
+        "Description": "Soft and chewy with semi-sweet chocolate chunks.",
+        "Price": 2.25,
+        "IsActive": true
+      },
+      "Quantity": 4,
+      "LineTotal": 6.75,
+      "TaxAmt": 0.5400,
+      "Total": 7.2900
+    }
+  ]
 }
