@@ -11,8 +11,8 @@ namespace OOPProjectRev2.Services
 {
     internal class DataStore
     {
-        private readonly string _filePath = "C:\\Users\\josha\\source\\repos\\OOPProjectRev2\\OOPProjectRev2\\data.json";
-        private readonly string _filePathCart = "C:\\Users\\josha\\source\\repos\\OOPProjectRev2\\OOPProjectRev2\\cart.json";
+        private readonly string _filePath = "C:\\Users\\josha\\source\\repos\\joshatk-hub\\OOPProject\\OOPProjectRev2\\data.json";
+        private readonly string _filePathCart = "C:\\Users\\josha\\source\\repos\\joshatk-hub\\OOPProject\\OOPProjectRev2\\cart.json";
         public void SaveData(AppState state)
         {
             var options = new JsonSerializerOptions

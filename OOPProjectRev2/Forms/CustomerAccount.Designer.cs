@@ -41,51 +41,57 @@
             // textBox1
             // 
             textBox1.BackColor = Color.BlanchedAlmond;
-            textBox1.Location = new Point(167, 59);
+            textBox1.Location = new Point(117, 35);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
+            textBox1.Size = new Size(106, 23);
             textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             textBox2.BackColor = Color.BlanchedAlmond;
-            textBox2.Location = new Point(167, 99);
+            textBox2.Location = new Point(117, 59);
+            textBox2.Margin = new Padding(2, 2, 2, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 31);
+            textBox2.Size = new Size(106, 23);
             textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
             textBox3.BackColor = Color.BlanchedAlmond;
-            textBox3.Location = new Point(167, 139);
+            textBox3.Location = new Point(117, 83);
+            textBox3.Margin = new Padding(2, 2, 2, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 31);
+            textBox3.Size = new Size(106, 23);
             textBox3.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 62);
+            label1.Location = new Point(8, 37);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(136, 25);
+            label1.Size = new Size(91, 15);
             label1.TabIndex = 3;
             label1.Text = "Phone Number:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 102);
+            label2.Location = new Point(8, 61);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(128, 25);
+            label2.Size = new Size(84, 15);
             label2.TabIndex = 4;
             label2.Text = "Email Address:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 142);
+            label3.Location = new Point(8, 85);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(91, 25);
+            label3.Size = new Size(60, 15);
             label3.TabIndex = 5;
             label3.Text = "Password:";
             // 
@@ -93,9 +99,10 @@
             // 
             button1.BackColor = Color.BlanchedAlmond;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(186, 188);
+            button1.Location = new Point(130, 113);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(112, 34);
+            button1.Size = new Size(78, 27);
             button1.TabIndex = 6;
             button1.Text = "Sign In";
             button1.UseVisualStyleBackColor = false;
@@ -105,9 +112,10 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.IndianRed;
-            linkLabel1.Location = new Point(152, 237);
+            linkLabel1.Location = new Point(106, 142);
+            linkLabel1.Margin = new Padding(2, 0, 2, 0);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(177, 25);
+            linkLabel1.Size = new Size(117, 15);
             linkLabel1.TabIndex = 7;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "or, continue as guest";
@@ -115,10 +123,10 @@
             // 
             // CustomerAccount
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(470, 286);
+            ClientSize = new Size(329, 181);
             Controls.Add(linkLabel1);
             Controls.Add(button1);
             Controls.Add(label3);
@@ -128,6 +136,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             ForeColor = Color.SaddleBrown;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "CustomerAccount";
             Text = "Account";
             ResumeLayout(false);

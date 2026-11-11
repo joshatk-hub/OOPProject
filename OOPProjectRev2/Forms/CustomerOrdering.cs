@@ -110,18 +110,26 @@ namespace OOPProjectRev2
 
         private void buttonAddCart_Click(object sender, EventArgs e)
         {
-            var item = listViewItems.SelectedItems[0];
-            if (item != null)
+            if (listViewItems.SelectedItems.Count == 0)
             {
-                string itemName = item.SubItems[0].Text;
-                var menuItem = _datastore.LoadRegularMenuItems().FirstOrDefault(i => i.Name == itemName) ??
-                               _datastore.LoadSeasonalMenuItems().FirstOrDefault(i => i.Name == itemName);
-                if (menuItem != null)
+                MessageBox.Show("Please select an item to add to the cart.");
+                return;
+            }
+            else
+            {
+                var item = listViewItems.SelectedItems[0];
+                if (item != null)
                 {
-                    Cart cart = _datastore.LoadCart();
-                    cart.AddItem(menuItem, 1);
-                    _datastore.SaveCart(cart);
-                    MessageBox.Show($"{menuItem.Name} has been added to your cart.");
+                    string itemName = item.SubItems[0].Text;
+                    var menuItem = _datastore.LoadRegularMenuItems().FirstOrDefault(i => i.Name == itemName) ??
+                                   _datastore.LoadSeasonalMenuItems().FirstOrDefault(i => i.Name == itemName);
+                    if (menuItem != null)
+                    {
+                        Cart cart = _datastore.LoadCart();
+                        cart.AddItem(menuItem, 1);
+                        _datastore.SaveCart(cart);
+                        MessageBox.Show($"{menuItem.Name} has been added to your cart.");
+                    }
                 }
             }
         }

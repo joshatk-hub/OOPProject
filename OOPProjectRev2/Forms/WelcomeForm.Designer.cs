@@ -37,9 +37,10 @@
             btnPlaceOrder.BackColor = Color.BlanchedAlmond;
             btnPlaceOrder.FlatStyle = FlatStyle.Flat;
             btnPlaceOrder.ForeColor = Color.SaddleBrown;
-            btnPlaceOrder.Location = new Point(84, 58);
+            btnPlaceOrder.Location = new Point(59, 35);
+            btnPlaceOrder.Margin = new Padding(2, 2, 2, 2);
             btnPlaceOrder.Name = "btnPlaceOrder";
-            btnPlaceOrder.Size = new Size(150, 150);
+            btnPlaceOrder.Size = new Size(105, 90);
             btnPlaceOrder.TabIndex = 0;
             btnPlaceOrder.Text = "Place an Order";
             btnPlaceOrder.UseVisualStyleBackColor = false;
@@ -50,9 +51,10 @@
             btnAdminPortal.BackColor = Color.BlanchedAlmond;
             btnAdminPortal.FlatStyle = FlatStyle.Flat;
             btnAdminPortal.ForeColor = Color.SaddleBrown;
-            btnAdminPortal.Location = new Point(341, 58);
+            btnAdminPortal.Location = new Point(239, 35);
+            btnAdminPortal.Margin = new Padding(2, 2, 2, 2);
             btnAdminPortal.Name = "btnAdminPortal";
-            btnAdminPortal.Size = new Size(150, 150);
+            btnAdminPortal.Size = new Size(105, 90);
             btnAdminPortal.TabIndex = 1;
             btnAdminPortal.Text = "Administrator Portal";
             btnAdminPortal.UseVisualStyleBackColor = false;
@@ -60,12 +62,13 @@
             // 
             // WelcomeForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(579, 267);
+            ClientSize = new Size(405, 176);
             Controls.Add(btnAdminPortal);
             Controls.Add(btnPlaceOrder);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "WelcomeForm";
             Text = "Welcome";
             ResumeLayout(false);

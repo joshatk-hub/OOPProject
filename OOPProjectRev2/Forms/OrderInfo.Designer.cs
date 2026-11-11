@@ -48,20 +48,22 @@
             // 
             dateTimePicker1.CalendarForeColor = Color.SaddleBrown;
             dateTimePicker1.CalendarMonthBackground = Color.BlanchedAlmond;
-            dateTimePicker1.Location = new Point(626, 168);
+            dateTimePicker1.Location = new Point(438, 101);
+            dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.MaxDate = new DateTime(2026, 10, 27, 0, 0, 0, 0);
             dateTimePicker1.MinDate = new DateTime(2026, 10, 19, 0, 0, 0, 0);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(326, 31);
+            dateTimePicker1.Size = new Size(229, 23);
             dateTimePicker1.TabIndex = 1;
             dateTimePicker1.Value = new DateTime(2026, 10, 19, 0, 0, 0, 0);
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(685, 140);
+            label1.Location = new Point(480, 84);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(210, 25);
+            label1.Size = new Size(139, 15);
             label1.TabIndex = 2;
             label1.Text = "Scheduled for pickup on:";
             // 
@@ -70,9 +72,10 @@
             btnPlaceOrder.BackColor = Color.BlanchedAlmond;
             btnPlaceOrder.FlatStyle = FlatStyle.Flat;
             btnPlaceOrder.ForeColor = Color.SaddleBrown;
-            btnPlaceOrder.Location = new Point(731, 281);
+            btnPlaceOrder.Location = new Point(512, 169);
+            btnPlaceOrder.Margin = new Padding(2);
             btnPlaceOrder.Name = "btnPlaceOrder";
-            btnPlaceOrder.Size = new Size(119, 63);
+            btnPlaceOrder.Size = new Size(83, 38);
             btnPlaceOrder.TabIndex = 3;
             btnPlaceOrder.Text = "Place Order";
             btnPlaceOrder.UseVisualStyleBackColor = false;
@@ -83,9 +86,10 @@
             listViewItems.Columns.AddRange(new ColumnHeader[] { columnName, columnHeaderQty, columnHeaderPrice, columnHeaderTax, columnHeaderTotal });
             listViewItems.FullRowSelect = true;
             listViewItems.GridLines = true;
-            listViewItems.Location = new Point(12, 12);
+            listViewItems.Location = new Point(8, 7);
+            listViewItems.Margin = new Padding(2);
             listViewItems.Name = "listViewItems";
-            listViewItems.Size = new Size(608, 470);
+            listViewItems.Size = new Size(426, 284);
             listViewItems.TabIndex = 5;
             listViewItems.UseCompatibleStateImageBehavior = false;
             listViewItems.View = View.Details;
@@ -120,9 +124,10 @@
             buttonAdd.BackColor = Color.BlanchedAlmond;
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.ForeColor = Color.SaddleBrown;
-            buttonAdd.Location = new Point(626, 205);
+            buttonAdd.Location = new Point(438, 123);
+            buttonAdd.Margin = new Padding(2);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(124, 70);
+            buttonAdd.Size = new Size(87, 42);
             buttonAdd.TabIndex = 6;
             buttonAdd.Text = "Add Item";
             buttonAdd.UseVisualStyleBackColor = false;
@@ -133,9 +138,10 @@
             buttonRemove.BackColor = Color.BlanchedAlmond;
             buttonRemove.FlatStyle = FlatStyle.Flat;
             buttonRemove.ForeColor = Color.SaddleBrown;
-            buttonRemove.Location = new Point(822, 205);
+            buttonRemove.Location = new Point(575, 123);
+            buttonRemove.Margin = new Padding(2);
             buttonRemove.Name = "buttonRemove";
-            buttonRemove.Size = new Size(130, 70);
+            buttonRemove.Size = new Size(91, 42);
             buttonRemove.TabIndex = 7;
             buttonRemove.Text = "Remove Item";
             buttonRemove.UseVisualStyleBackColor = false;
@@ -144,36 +150,39 @@
             // labelTotal
             // 
             labelTotal.AutoSize = true;
-            labelTotal.Location = new Point(626, 83);
+            labelTotal.Location = new Point(438, 59);
+            labelTotal.Margin = new Padding(2, 0, 2, 0);
             labelTotal.Name = "labelTotal";
-            labelTotal.Size = new Size(129, 25);
+            labelTotal.Size = new Size(84, 15);
             labelTotal.TabIndex = 8;
             labelTotal.Text = "Order Total: $0";
             // 
             // labelSubtotal
             // 
             labelSubtotal.AutoSize = true;
-            labelSubtotal.Location = new Point(626, 12);
+            labelSubtotal.Location = new Point(438, 7);
+            labelSubtotal.Margin = new Padding(2, 0, 2, 0);
             labelSubtotal.Name = "labelSubtotal";
-            labelSubtotal.Size = new Size(159, 25);
+            labelSubtotal.Size = new Size(102, 15);
             labelSubtotal.TabIndex = 9;
             labelSubtotal.Text = "Order Subtotal: $0";
             // 
             // labelTaxAmt
             // 
             labelTaxAmt.AutoSize = true;
-            labelTaxAmt.Location = new Point(626, 46);
+            labelTaxAmt.Location = new Point(438, 32);
+            labelTaxAmt.Margin = new Padding(2, 0, 2, 0);
             labelTaxAmt.Name = "labelTaxAmt";
-            labelTaxAmt.Size = new Size(116, 25);
+            labelTaxAmt.Size = new Size(75, 15);
             labelTaxAmt.TabIndex = 10;
             labelTaxAmt.Text = "Order Tax: $0";
             // 
             // OrderInfo
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(964, 450);
+            ClientSize = new Size(675, 324);
             Controls.Add(labelTaxAmt);
             Controls.Add(labelSubtotal);
             Controls.Add(labelTotal);
@@ -183,6 +192,7 @@
             Controls.Add(btnPlaceOrder);
             Controls.Add(label1);
             Controls.Add(dateTimePicker1);
+            Margin = new Padding(2);
             Name = "OrderInfo";
             Text = "OrderInfo";
             Load += OrderInfo_Load;

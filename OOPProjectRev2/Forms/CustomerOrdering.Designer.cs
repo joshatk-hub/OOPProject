@@ -53,7 +53,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripButton3 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(893, 33);
+            toolStrip1.Size = new Size(643, 31);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -63,7 +63,7 @@
             toolStripButton1.Image = Properties.Resources.home;
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(34, 28);
+            toolStripButton1.Size = new Size(28, 28);
             toolStripButton1.Text = "Return to Welcome";
             toolStripButton1.TextImageRelation = TextImageRelation.TextAboveImage;
             toolStripButton1.Click += toolStripButton1_Click;
@@ -74,7 +74,7 @@
             toolStripButton2.Image = Properties.Resources.user;
             toolStripButton2.ImageTransparentColor = Color.Magenta;
             toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(34, 28);
+            toolStripButton2.Size = new Size(28, 28);
             toolStripButton2.Text = "Account";
             toolStripButton2.Click += toolStripButton2_Click;
             // 
@@ -84,7 +84,7 @@
             toolStripButton3.Image = Properties.Resources.grocery_store;
             toolStripButton3.ImageTransparentColor = Color.Magenta;
             toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(34, 28);
+            toolStripButton3.Size = new Size(28, 28);
             toolStripButton3.Text = "Go to Cart";
             toolStripButton3.Click += toolStripButton3_Click;
             // 
@@ -93,9 +93,10 @@
             listViewItems.Columns.AddRange(new ColumnHeader[] { columnName, columnHeaderCategory, columnHeaderPrice });
             listViewItems.FullRowSelect = true;
             listViewItems.GridLines = true;
-            listViewItems.Location = new Point(12, 36);
+            listViewItems.Location = new Point(11, 33);
+            listViewItems.Margin = new Padding(2);
             listViewItems.Name = "listViewItems";
-            listViewItems.Size = new Size(388, 470);
+            listViewItems.Size = new Size(363, 284);
             listViewItems.TabIndex = 1;
             listViewItems.UseCompatibleStateImageBehavior = false;
             listViewItems.View = View.Details;
@@ -119,9 +120,10 @@
             // 
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "All", "Breads", "Cookies", "Muffins", "Pastries", "Cakes", "Pies", "Extras" });
-            comboBoxCategory.Location = new Point(508, 36);
+            comboBoxCategory.Location = new Point(462, 47);
+            comboBoxCategory.Margin = new Padding(2);
             comboBoxCategory.Name = "comboBoxCategory";
-            comboBoxCategory.Size = new Size(182, 33);
+            comboBoxCategory.Size = new Size(129, 23);
             comboBoxCategory.TabIndex = 2;
             comboBoxCategory.Text = "All";
             comboBoxCategory.SelectedIndexChanged += comboBoxCategory_SelectedIndexChanged;
@@ -137,18 +139,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(414, 39);
+            label1.Location = new Point(389, 50);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(88, 25);
+            label1.Size = new Size(58, 15);
             label1.TabIndex = 3;
             label1.Text = "Category:";
             // 
             // buttonAddCart
             // 
             buttonAddCart.BackColor = Color.BlanchedAlmond;
-            buttonAddCart.Location = new Point(467, 164);
+            buttonAddCart.Location = new Point(462, 89);
+            buttonAddCart.Margin = new Padding(2);
             buttonAddCart.Name = "buttonAddCart";
-            buttonAddCart.Size = new Size(182, 86);
+            buttonAddCart.Size = new Size(127, 52);
             buttonAddCart.TabIndex = 4;
             buttonAddCart.Text = "Add to Cart";
             buttonAddCart.UseVisualStyleBackColor = false;
@@ -156,16 +160,17 @@
             // 
             // CustomerOrdering
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(893, 518);
+            ClientSize = new Size(643, 366);
             Controls.Add(buttonAddCart);
             Controls.Add(label1);
             Controls.Add(comboBoxCategory);
             Controls.Add(listViewItems);
             Controls.Add(toolStrip1);
             ForeColor = Color.SaddleBrown;
+            Margin = new Padding(2);
             Name = "CustomerOrdering";
             Text = "Order";
             Load += CustomerOrdering_Load;
