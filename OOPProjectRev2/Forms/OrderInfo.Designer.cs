@@ -134,7 +134,7 @@
             buttonAdd.Location = new Point(11, 295);
             buttonAdd.Margin = new Padding(2);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(87, 42);
+            buttonAdd.Size = new Size(87, 45);
             buttonAdd.TabIndex = 6;
             buttonAdd.Text = "Add Item";
             buttonAdd.UseVisualStyleBackColor = false;
@@ -148,7 +148,7 @@
             buttonRemove.Location = new Point(102, 295);
             buttonRemove.Margin = new Padding(2);
             buttonRemove.Name = "buttonRemove";
-            buttonRemove.Size = new Size(91, 42);
+            buttonRemove.Size = new Size(91, 45);
             buttonRemove.TabIndex = 7;
             buttonRemove.Text = "Remove Item";
             buttonRemove.UseVisualStyleBackColor = false;

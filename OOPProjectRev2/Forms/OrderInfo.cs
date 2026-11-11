@@ -14,13 +14,12 @@ namespace OOPProjectRev2
 {
     public partial class OrderInfo : Form
     {
-        private readonly DataStore _datastore;
+        private readonly IDataRepository _datastore;
         private readonly Cart _currentCart;
         public OrderInfo()
         {
             InitializeComponent();
             _datastore = new DataStore();
-            _datastore.LoadCart();
             _currentCart = _datastore.LoadCart();
         }
         private void AddOrderLinesToListView()
@@ -39,9 +38,10 @@ namespace OOPProjectRev2
         private void UpdateCartDisplay()
         {
             AddOrderLinesToListView();
-            labelSubtotal.Text = $"Subtotal: {_datastore.LoadCart().GetSubtotal():C}";
-            labelTaxAmt.Text = $"Tax: {_datastore.LoadCart().GetTax():C}";
-            labelTotal.Text = $"Total: {_datastore.LoadCart().GetTotal():C}";
+            // Optimized to read from the already loaded _currentCart variable
+            labelSubtotal.Text = $"Subtotal: {_currentCart.GetSubtotal():C}";
+            labelTaxAmt.Text = $"Tax: {_currentCart.GetTax():C}";
+            labelTotal.Text = $"Total: {_currentCart.GetTotal():C}";
             labelPickup.Text = PickupDate();
         }
         private string PickupDate()
@@ -69,7 +69,7 @@ namespace OOPProjectRev2
             foreach (var orderLine in _currentCart.OrderLines)
             {
                 DateTime minimumAllowedDateTime = DateTime.Now.AddHours(orderLine.Item.LeadTime);
-                
+
                 if (dateTimePicker.Value < minimumAllowedDateTime)
                 {
                     MessageBox.Show($"The item '{orderLine.Item.Name}' requires a lead time of {orderLine.Item.LeadTime} hours. The earliest you can place this order is {minimumAllowedDateTime:g}.");
@@ -77,15 +77,12 @@ namespace OOPProjectRev2
                 }
             }
             MessageBox.Show("Order placed successfully!");
-
         }
-
         private void OrderInfo_Load(object sender, EventArgs e)
         {
             textBoxNotes.Clear();
             UpdateCartDisplay();
         }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if (listViewItems.SelectedItems.Count == 0)
@@ -93,7 +90,6 @@ namespace OOPProjectRev2
                 MessageBox.Show("Please select an item to add.");
                 return;
             }
-
             else
             {
                 var selectedItem = listViewItems.SelectedItems[0].Text;
@@ -103,7 +99,6 @@ namespace OOPProjectRev2
                 UpdateCartDisplay();
             }
         }
-
         private void buttonRemove_Click(object sender, EventArgs e)
         {
             if (listViewItems.SelectedItems.Count == 0)
@@ -120,7 +115,6 @@ namespace OOPProjectRev2
                 UpdateCartDisplay();
             }
         }
-
         private void buttonClear_Click(object sender, EventArgs e)
         {
             listViewItems.Items.Clear();
@@ -128,7 +122,5 @@ namespace OOPProjectRev2
             textBoxNotes.Clear();
             UpdateCartDisplay();
         }
-
-
     }
 }

@@ -9,13 +9,15 @@ namespace OOPProjectRev2.Services
 {
     internal class MenuService
     {
-        private readonly DataStore _dataStore;
-
-        public MenuService(DataStore dataStore)
+        private readonly IDataRepository _dataRepository;
+        public MenuService(IDataRepository dataRepository)
         {
-            _dataStore = dataStore;
+            _dataRepository = dataRepository;
         }
-
+        public List<MenuItem> GetAvailableRegularMenu()
+        {
+            return _dataRepository.LoadRegularMenuItems();
+        }
 
     }
 }

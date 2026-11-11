@@ -9,57 +9,51 @@ using System.Threading.Tasks;
 
 namespace OOPProjectRev2.Services
 {
-    internal class DataStore
+    internal class DataStore : IDataRepository
     {
         private readonly string _filePath = "C:\\Users\\josha\\source\\repos\\joshatk-hub\\OOPProject\\OOPProjectRev2\\data.json";
         private readonly string _filePathCart = "C:\\Users\\josha\\source\\repos\\joshatk-hub\\OOPProject\\OOPProjectRev2\\cart.json";
+
         public void SaveData(AppState state)
         {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true 
-            };
+            var options = new JsonSerializerOptions { WriteIndented = true };
             string jsonData = JsonSerializer.Serialize(state, options);
             File.WriteAllText(_filePath, jsonData);
         }
+
         public void SaveCart(Cart cart)
         {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
+            var options = new JsonSerializerOptions { WriteIndented = true };
             string jsonData = JsonSerializer.Serialize(cart, options);
             File.WriteAllText(_filePathCart, jsonData);
         }
+
         public AppState LoadData()
         {
-            if (!File.Exists(_filePath))
-            {
-                return new AppState(); // returns empty if there's a file pathing issue
-            }
-
+            if (!File.Exists(_filePath)) return new AppState();
             string jsonString = File.ReadAllText(_filePath);
             return JsonSerializer.Deserialize<AppState>(jsonString) ?? new AppState();
         }
+
         public Cart LoadCart()
         {
-            if (!File.Exists(_filePathCart))
-            {
-                return new Cart(); // returns empty if there's a file pathing issue
-            }
+            if (!File.Exists(_filePathCart)) return new Cart();
             string jsonString = File.ReadAllText(_filePathCart);
             return JsonSerializer.Deserialize<Cart>(jsonString) ?? new Cart();
         }
+
         public List<OrderLine> LoadOrderLines()
         {
             var cart = LoadCart();
             return cart.OrderLines;
         }
+
         public List<MenuItem> LoadRegularMenuItems()
         {
             var state = LoadData();
             return state.MenuItems;
         }
+
         public List<SeasonalItem> LoadSeasonalMenuItems()
         {
             var state = LoadData();
