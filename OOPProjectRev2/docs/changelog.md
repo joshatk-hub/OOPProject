@@ -4,6 +4,19 @@
 
 ### Added
 - Carts (orders) can now be saved and displayed. The Cart class gained methods for saving and loading, and the forms were updated to support it (`b36f538`)
+- Customer account logic, built on the new account system (`4c099f8`)
+- Account system with loose, string-based password matching, allowing a user to "log in" (`d561e39`)
+- Interface added as requested, with forms updated to use it (`c8b1129`)
+- DateTimePicker functionality that follows the business rules in specialnotes.md (`4cb255f`)
+- "Baker's dozen" pricing rule, as specified in the variant card (`a19716f`)
+- "Clear order" button at checkout that removes all orders and generates a new cart (`a19716f`)
+- This changelog (`fb0f4f8`)
+
+### Changed
+- Several UI elements (`fb0f4f8`)
+
+### Fixed
+- Bug in the account logic and in the baker's dozen business rule (`4c099f8`)
 
 ## 2026-11-09
 
