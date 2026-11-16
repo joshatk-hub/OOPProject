@@ -6,12 +6,31 @@
       "Username": "joshatkins74",
       "Phone": "256-537-3498",
       "PasswordHash": "S\u002Bl4fy9Ccw2Xko4z\u002Bky/1sBXA0E=",
-      "PasswordSalt": "nAYhXNzaOHiu/y/F/gg1KQ=="
+      "PasswordSalt": "nAYhXNzaOHiu/y/F/gg1KQ==",
+      "SavedOrders": [
+        {
+          "SavedOrderId": "fa984426-9fc6-4e53-8bb8-50d51f3a5804",
+          "OrderName": "test",
+          "Items": [
+            {
+              "ItemId": "001",
+              "ItemName": "Sourdough loaf",
+              "Category": "Breads",
+              "Quantity": 5,
+              "Price": 7.5
+            }
+          ],
+          "TotalPrice": 37.5,
+          "SavedDate": "2026-11-16T05:15:14.4349052-06:00",
+          "Notes": ""
+        }
+      ]
     }
   ],
   "Email": "",
   "Username": "",
   "Phone": "",
   "PasswordHash": "",
-  "PasswordSalt": ""
+  "PasswordSalt": "",
+  "SavedOrders": []
 }

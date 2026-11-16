@@ -38,8 +38,11 @@ namespace OOPProjectRev2
             if (_accountService.Authenticate(email, password))
             {
                 LoggedInCustomer = _accountService.GetCustomerByEmail(email);
-
                 MessageBox.Show($"Welcome back, {LoggedInCustomer.Username}!", "Sign In Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Application.OpenForms["CustomerOrdering"] is CustomerOrdering orderForm)
+                {
+                    orderForm.SetLoggedInUser(email);
+                }
             }
             else
             {

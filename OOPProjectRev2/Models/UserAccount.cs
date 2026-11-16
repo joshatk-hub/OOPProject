@@ -16,6 +16,7 @@ namespace OOPProjectRev2.Models
         public string Phone { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
         public string PasswordSalt { get; set; } = string.Empty;
+        public List<SavedOrder> SavedOrders { get; set; } = new List<SavedOrder>();
 
         public bool VerifyPassword(string inputPassword)
         {

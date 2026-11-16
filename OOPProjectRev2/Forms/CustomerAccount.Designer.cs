@@ -42,13 +42,6 @@
             columnHeaderStatus = new ColumnHeader();
             buttonSignUp = new Button();
             label4 = new Label();
-            label5 = new Label();
-            listViewItems = new ListView();
-            columnName = new ColumnHeader();
-            columnHeaderQty = new ColumnHeader();
-            columnHeaderPrice = new ColumnHeader();
-            columnHeaderTax = new ColumnHeader();
-            columnHeaderTotal = new ColumnHeader();
             SuspendLayout();
             // 
             // textBoxNumber
@@ -128,7 +121,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.IndianRed;
-            linkLabel1.Location = new Point(135, 142);
+            linkLabel1.Location = new Point(148, 142);
             linkLabel1.Margin = new Padding(2, 0, 2, 0);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(117, 15);
@@ -142,9 +135,10 @@
             listViewOrders.BackColor = SystemColors.Window;
             listViewOrders.Columns.AddRange(new ColumnHeader[] { columnHeaderConfirmation, columnHeaderPickup, columnHeaderStatus });
             listViewOrders.ForeColor = SystemColors.ActiveCaptionText;
+            listViewOrders.GridLines = true;
             listViewOrders.Location = new Point(338, 37);
             listViewOrders.Name = "listViewOrders";
-            listViewOrders.Size = new Size(284, 128);
+            listViewOrders.Size = new Size(286, 232);
             listViewOrders.TabIndex = 8;
             listViewOrders.UseCompatibleStateImageBehavior = false;
             listViewOrders.View = View.Details;
@@ -186,62 +180,12 @@
             label4.TabIndex = 11;
             label4.Text = "Order History";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(308, 223);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(76, 15);
-            label5.TabIndex = 12;
-            label5.Text = "Saved Orders";
-            // 
-            // listViewItems
-            // 
-            listViewItems.Columns.AddRange(new ColumnHeader[] { columnName, columnHeaderQty, columnHeaderPrice, columnHeaderTax, columnHeaderTotal });
-            listViewItems.FullRowSelect = true;
-            listViewItems.GridLines = true;
-            listViewItems.Location = new Point(86, 240);
-            listViewItems.Margin = new Padding(2);
-            listViewItems.Name = "listViewItems";
-            listViewItems.Size = new Size(505, 284);
-            listViewItems.TabIndex = 13;
-            listViewItems.UseCompatibleStateImageBehavior = false;
-            listViewItems.View = View.Details;
-            // 
-            // columnName
-            // 
-            columnName.Text = "Name";
-            columnName.Width = 180;
-            // 
-            // columnHeaderQty
-            // 
-            columnHeaderQty.Text = "Quantity";
-            columnHeaderQty.Width = 80;
-            // 
-            // columnHeaderPrice
-            // 
-            columnHeaderPrice.Text = "Subtotal";
-            columnHeaderPrice.Width = 80;
-            // 
-            // columnHeaderTax
-            // 
-            columnHeaderTax.Text = "Tax";
-            columnHeaderTax.Width = 80;
-            // 
-            // columnHeaderTotal
-            // 
-            columnHeaderTotal.Text = "Total";
-            columnHeaderTotal.Width = 80;
-            // 
             // CustomerAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(669, 535);
-            Controls.Add(listViewItems);
-            Controls.Add(label5);
+            ClientSize = new Size(669, 281);
             Controls.Add(label4);
             Controls.Add(buttonSignUp);
             Controls.Add(listViewOrders);
@@ -277,12 +221,5 @@
         private ColumnHeader columnHeaderStatus;
         private Button buttonSignUp;
         private Label label4;
-        private Label label5;
-        private ListView listViewItems;
-        private ColumnHeader columnName;
-        private ColumnHeader columnHeaderQty;
-        private ColumnHeader columnHeaderPrice;
-        private ColumnHeader columnHeaderTax;
-        private ColumnHeader columnHeaderTotal;
     }
 }
