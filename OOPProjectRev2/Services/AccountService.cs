@@ -38,5 +38,35 @@ namespace OOPProjectRev2.Services
             }
             return customer.VerifyPassword(password);
         }
+
+        public bool CreateAccount(string email, string username, string phone, string password)
+        {
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                return false;
+            }
+
+            if (GetCustomerByEmail(email) != null)
+            {
+                return false;
+            }
+
+            var (hash, salt) = PasswordHasher.HashPassword(password);
+
+            var newAccount = new UserAccount
+            {
+                Email = email.Trim(),
+                Username = username,
+                Phone = phone,
+                PasswordHash = hash,
+                PasswordSalt = salt
+            };
+
+            var currentData = _dataRepository.LoadCustomer();
+            currentData.Customers.Add(newAccount);
+            _dataRepository.SaveCustomer(currentData);
+
+            return true;
+        }
     }
 }

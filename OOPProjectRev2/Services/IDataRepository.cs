@@ -18,6 +18,7 @@ namespace OOPProjectRev2.Services
         Cart LoadCart();
         List<OrderLine> LoadOrderLines();
         UserAccount LoadCustomer();
+        void SaveCustomer(UserAccount account);
         Order LoadOrder();
     }
 }

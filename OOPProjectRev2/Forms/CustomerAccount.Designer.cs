@@ -40,6 +40,15 @@
             columnHeaderConfirmation = new ColumnHeader();
             columnHeaderPickup = new ColumnHeader();
             columnHeaderStatus = new ColumnHeader();
+            buttonSignUp = new Button();
+            label4 = new Label();
+            label5 = new Label();
+            listViewItems = new ListView();
+            columnName = new ColumnHeader();
+            columnHeaderQty = new ColumnHeader();
+            columnHeaderPrice = new ColumnHeader();
+            columnHeaderTax = new ColumnHeader();
+            columnHeaderTotal = new ColumnHeader();
             SuspendLayout();
             // 
             // textBoxNumber
@@ -106,7 +115,7 @@
             // 
             buttonSignIn.BackColor = Color.BlanchedAlmond;
             buttonSignIn.FlatStyle = FlatStyle.Flat;
-            buttonSignIn.Location = new Point(156, 113);
+            buttonSignIn.Location = new Point(117, 113);
             buttonSignIn.Margin = new Padding(2);
             buttonSignIn.Name = "buttonSignIn";
             buttonSignIn.Size = new Size(78, 27);
@@ -133,9 +142,9 @@
             listViewOrders.BackColor = SystemColors.Window;
             listViewOrders.Columns.AddRange(new ColumnHeader[] { columnHeaderConfirmation, columnHeaderPickup, columnHeaderStatus });
             listViewOrders.ForeColor = SystemColors.ActiveCaptionText;
-            listViewOrders.Location = new Point(330, 35);
+            listViewOrders.Location = new Point(338, 37);
             listViewOrders.Name = "listViewOrders";
-            listViewOrders.Size = new Size(296, 200);
+            listViewOrders.Size = new Size(284, 128);
             listViewOrders.TabIndex = 8;
             listViewOrders.UseCompatibleStateImageBehavior = false;
             listViewOrders.View = View.Details;
@@ -154,12 +163,87 @@
             // 
             columnHeaderStatus.Text = "Status";
             // 
+            // buttonSignUp
+            // 
+            buttonSignUp.BackColor = Color.BlanchedAlmond;
+            buttonSignUp.FlatStyle = FlatStyle.Flat;
+            buttonSignUp.Location = new Point(217, 113);
+            buttonSignUp.Margin = new Padding(2);
+            buttonSignUp.Name = "buttonSignUp";
+            buttonSignUp.Size = new Size(78, 27);
+            buttonSignUp.TabIndex = 9;
+            buttonSignUp.Text = "Sign Up";
+            buttonSignUp.UseVisualStyleBackColor = false;
+            buttonSignUp.Click += buttonSignUp_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(440, 17);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(78, 15);
+            label4.TabIndex = 11;
+            label4.Text = "Order History";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(308, 223);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(76, 15);
+            label5.TabIndex = 12;
+            label5.Text = "Saved Orders";
+            // 
+            // listViewItems
+            // 
+            listViewItems.Columns.AddRange(new ColumnHeader[] { columnName, columnHeaderQty, columnHeaderPrice, columnHeaderTax, columnHeaderTotal });
+            listViewItems.FullRowSelect = true;
+            listViewItems.GridLines = true;
+            listViewItems.Location = new Point(86, 240);
+            listViewItems.Margin = new Padding(2);
+            listViewItems.Name = "listViewItems";
+            listViewItems.Size = new Size(505, 284);
+            listViewItems.TabIndex = 13;
+            listViewItems.UseCompatibleStateImageBehavior = false;
+            listViewItems.View = View.Details;
+            // 
+            // columnName
+            // 
+            columnName.Text = "Name";
+            columnName.Width = 180;
+            // 
+            // columnHeaderQty
+            // 
+            columnHeaderQty.Text = "Quantity";
+            columnHeaderQty.Width = 80;
+            // 
+            // columnHeaderPrice
+            // 
+            columnHeaderPrice.Text = "Subtotal";
+            columnHeaderPrice.Width = 80;
+            // 
+            // columnHeaderTax
+            // 
+            columnHeaderTax.Text = "Tax";
+            columnHeaderTax.Width = 80;
+            // 
+            // columnHeaderTotal
+            // 
+            columnHeaderTotal.Text = "Total";
+            columnHeaderTotal.Width = 80;
+            // 
             // CustomerAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(638, 317);
+            ClientSize = new Size(669, 535);
+            Controls.Add(listViewItems);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(buttonSignUp);
             Controls.Add(listViewOrders);
             Controls.Add(linkLabel1);
             Controls.Add(buttonSignIn);
@@ -191,5 +275,14 @@
         private ColumnHeader columnHeaderConfirmation;
         private ColumnHeader columnHeaderPickup;
         private ColumnHeader columnHeaderStatus;
+        private Button buttonSignUp;
+        private Label label4;
+        private Label label5;
+        private ListView listViewItems;
+        private ColumnHeader columnName;
+        private ColumnHeader columnHeaderQty;
+        private ColumnHeader columnHeaderPrice;
+        private ColumnHeader columnHeaderTax;
+        private ColumnHeader columnHeaderTotal;
     }
 }

@@ -14,15 +14,17 @@ namespace OOPProjectRev2.Models
         public string Email { get; set; } = string.Empty;
         public string Username { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+        public string PasswordHash { get; set; } = string.Empty;
+        public string PasswordSalt { get; set; } = string.Empty;
+
         public bool VerifyPassword(string inputPassword)
         {
-            if (string.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(PasswordHash) || string.IsNullOrEmpty(PasswordSalt))
             {
                 return false;
             }
 
-            return Password == inputPassword;
+            return PasswordHasher.VerifyPassword(inputPassword, PasswordHash, PasswordSalt);
         }
     }
 }

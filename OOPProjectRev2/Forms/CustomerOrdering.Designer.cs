@@ -96,7 +96,7 @@
             listViewItems.Location = new Point(11, 33);
             listViewItems.Margin = new Padding(2);
             listViewItems.Name = "listViewItems";
-            listViewItems.Size = new Size(363, 284);
+            listViewItems.Size = new Size(361, 284);
             listViewItems.TabIndex = 1;
             listViewItems.UseCompatibleStateImageBehavior = false;
             listViewItems.View = View.Details;

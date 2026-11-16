@@ -46,5 +46,36 @@ namespace OOPProjectRev2
                 MessageBox.Show("Invalid email or password. Please check your credentials.", "Sign In Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            string email = textBoxEmail.Text.Trim();
+            string phone = textBoxNumber.Text.Trim();
+            string password = textBoxPassword.Text;
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Please fill in all fields (Phone, Email, and Password).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string username = email.Split('@')[0];
+
+            bool success = _accountService.CreateAccount(email, username, phone, password);
+
+            if (success)
+            {
+                MessageBox.Show("Account created successfully! You can now sign in.", "Account Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clear the fields
+                textBoxEmail.Clear();
+                textBoxPassword.Clear();
+                textBoxNumber.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Failed to create account. The email may already exist.", "Account Creation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

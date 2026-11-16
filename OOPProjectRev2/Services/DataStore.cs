@@ -45,6 +45,12 @@ namespace OOPProjectRev2.Services
             string jsonString = File.ReadAllText(_filePathAccounts);
             return JsonSerializer.Deserialize<UserAccount>(jsonString) ?? new UserAccount();
         }
+        public void SaveCustomer(UserAccount account)
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonData = JsonSerializer.Serialize(account, options);
+            File.WriteAllText(_filePathAccounts, jsonData);
+        }
         public Order LoadOrder()
         {
             if (!File.Exists(_filePathAccounts)) return new Order();
