@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OOPProjectRev2.Models
 {
-    public class UserAccount
+    internal class UserAccount
     {
         private readonly DataStore _dataStore = new DataStore();
         public List<UserAccount> Customers { get; set; } = new List<UserAccount>();
@@ -17,6 +17,7 @@ namespace OOPProjectRev2.Models
         public string PasswordHash { get; set; } = string.Empty;
         public string PasswordSalt { get; set; } = string.Empty;
         public List<SavedOrder> SavedOrders { get; set; } = new List<SavedOrder>();
+        public List<OrderConfirmation> OrderConfirmations { get; set; } = new List<OrderConfirmation>();
 
         public bool VerifyPassword(string inputPassword)
         {

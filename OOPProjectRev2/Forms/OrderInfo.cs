@@ -16,11 +16,20 @@ namespace OOPProjectRev2
     {
         private readonly IDataRepository _datastore;
         private readonly Cart _currentCart;
+        private readonly OrderConfirmationService _orderConfirmationService;
+        private string _currentUserEmail = string.Empty;
+
         public OrderInfo()
         {
             InitializeComponent();
             _datastore = new DataStore();
             _currentCart = _datastore.LoadCart();
+            _orderConfirmationService = new OrderConfirmationService(_datastore);
+        }
+
+        public void SetLoggedInUser(string email)
+        {
+            _currentUserEmail = email;
         }
         private void AddOrderLinesToListView()
         {
@@ -76,7 +85,61 @@ namespace OOPProjectRev2
                     return;
                 }
             }
-            MessageBox.Show("Order placed successfully!");
+            // Create order confirmation
+            string notes = textBoxNotes.Text;
+            var confirmation = _orderConfirmationService.CreateOrderConfirmation(
+                _currentCart,
+                dateTimePicker.Value,
+                notes
+            );
+            if (confirmation == null)
+            {
+                MessageBox.Show("Failed to create order confirmation.");
+                return;
+            }
+            // check login
+            if (!string.IsNullOrEmpty(_currentUserEmail))
+            {
+                // if logged in, save to account
+                bool saved = _orderConfirmationService.SaveOrderConfirmationToCustomer(_currentUserEmail, confirmation);
+
+                if (saved)
+                {
+                    MessageBox.Show(
+                        $"Order placed successfully!\n\n" +
+                        $"Confirmation Code: {confirmation.ConfirmationCode}\n" +
+                        $"Pickup Date: {confirmation.PickupDate:MM/dd/yyyy HH:mm}\n" +
+                        $"Total: {confirmation.TotalPrice:C}\n\n" +
+                        $"Your order has been saved to your account.",
+                        "Order Confirmed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    _datastore.SaveCart(new Cart());
+                    UpdateCartDisplay();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to save order confirmation. Please try again.");
+                }
+            }
+            else
+            {
+                // show confirmation for guest
+                MessageBox.Show(
+                    $"Order placed successfully!\n\n" +
+                    $"Confirmation Code: {confirmation.ConfirmationCode}\n" +
+                    $"Pickup Date: {confirmation.PickupDate:MM/dd/yyyy HH:mm}\n" +
+                    $"Total: {confirmation.TotalPrice:C}\n\n" +
+                    $"Please save your confirmation code.\n" +
+                    $"This order is not tied to an account.",
+                    "Guest Order Confirmed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                _datastore.SaveCart(new Cart());
+                UpdateCartDisplay();
+            }
         }
         private void OrderInfo_Load(object sender, EventArgs e)
         {

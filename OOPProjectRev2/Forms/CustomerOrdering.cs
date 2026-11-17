@@ -94,6 +94,10 @@ namespace OOPProjectRev2
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             OrderInfo orderInfo = new OrderInfo();
+            if (!string.IsNullOrEmpty(_currentUserEmail))
+            {
+                orderInfo.SetLoggedInUser(_currentUserEmail);
+            }
             orderInfo.Show();
         }
         private void CustomerOrdering_Load(object sender, EventArgs e)

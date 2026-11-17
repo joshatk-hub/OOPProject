@@ -24,6 +24,36 @@
           "SavedDate": "2026-11-16T05:15:14.4349052-06:00",
           "Notes": ""
         }
+      ],
+      "OrderConfirmations": [
+        {
+          "ConfirmationCode": "OBB-261117-506",
+          "OrderDate": "2026-11-17T14:21:51.9551249-06:00",
+          "PickupDate": "2026-11-19T20:40:13",
+          "Items": [
+            {
+              "ItemId": "004",
+              "ItemName": "Cinnamon roll",
+              "Category": "Pastries",
+              "Quantity": 3,
+              "Price": 3.75,
+              "LineTotal": 11.25
+            },
+            {
+              "ItemId": "002",
+              "ItemName": "Chocolate chip cookie",
+              "Category": "Cookies",
+              "Quantity": 2,
+              "Price": 2.25,
+              "LineTotal": 4.50
+            }
+          ],
+          "Notes": "test test one two",
+          "Status": "Received",
+          "SubtotalPrice": 15.75,
+          "TaxAmount": 1.2600,
+          "TotalPrice": 17.0100
+        }
       ]
     }
   ],
@@ -32,5 +62,6 @@
   "Phone": "",
   "PasswordHash": "",
   "PasswordSalt": "",
-  "SavedOrders": []
+  "SavedOrders": [],
+  "OrderConfirmations": []
 }

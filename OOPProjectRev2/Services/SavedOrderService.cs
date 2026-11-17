@@ -22,16 +22,13 @@ namespace OOPProjectRev2.Services
             {
                 return false;
             }
-
             var currentData = _dataRepository.LoadCustomer();
             var customer = currentData.Customers.FirstOrDefault(c =>
                 string.Equals(c.Email?.Trim(), email.Trim(), StringComparison.OrdinalIgnoreCase));
-
             if (customer == null)
             {
                 return false;
             }
-
             var savedOrder = new SavedOrder
             {
                 OrderName = orderName,
@@ -52,7 +49,6 @@ namespace OOPProjectRev2.Services
 
             return true;
         }
-
         public List<SavedOrder> GetSavedOrders(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -66,7 +62,6 @@ namespace OOPProjectRev2.Services
 
             return customer?.SavedOrders ?? new List<SavedOrder>();
         }
-
         public SavedOrder GetSavedOrderById(string email, string savedOrderId)
         {
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(savedOrderId))
@@ -77,14 +72,12 @@ namespace OOPProjectRev2.Services
             var savedOrders = GetSavedOrders(email);
             return savedOrders.FirstOrDefault(so => so.SavedOrderId == savedOrderId);
         }
-
         public bool DeleteSavedOrder(string email, string savedOrderId)
         {
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(savedOrderId))
             {
                 return false;
             }
-
             var currentData = _dataRepository.LoadCustomer();
             var customer = currentData.Customers.FirstOrDefault(c =>
                 string.Equals(c.Email?.Trim(), email.Trim(), StringComparison.OrdinalIgnoreCase));
@@ -93,7 +86,6 @@ namespace OOPProjectRev2.Services
             {
                 return false;
             }
-
             var savedOrder = customer.SavedOrders.FirstOrDefault(so => so.SavedOrderId == savedOrderId);
             if (savedOrder == null)
             {
@@ -105,7 +97,6 @@ namespace OOPProjectRev2.Services
 
             return true;
         }
-
         public Cart LoadSavedOrderAsCart(string email, string savedOrderId, List<MenuItem> availableItems)
         {
             var savedOrder = GetSavedOrderById(email, savedOrderId);
@@ -126,7 +117,6 @@ namespace OOPProjectRev2.Services
 
             return cart;
         }
-
         public bool ApplySavedOrderToCart(string email, string savedOrderId, List<MenuItem> availableItems, IDataRepository dataRepository)
         {
             var savedOrder = GetSavedOrderById(email, savedOrderId);
@@ -134,11 +124,7 @@ namespace OOPProjectRev2.Services
             {
                 return false;
             }
-
-            // Load current cart
             var currentCart = dataRepository.LoadCart();
-
-            // Add each item from saved order to current cart
             foreach (var savedOrderLine in savedOrder.Items)
             {
                 var menuItem = availableItems.FirstOrDefault(mi => mi.ID == savedOrderLine.ItemId);
@@ -147,8 +133,6 @@ namespace OOPProjectRev2.Services
                     currentCart.AddItem(menuItem, savedOrderLine.Quantity);
                 }
             }
-
-            // Save merged cart
             dataRepository.SaveCart(currentCart);
             return true;
         }
